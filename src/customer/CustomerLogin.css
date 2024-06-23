@@ -1,0 +1,23 @@
+.class-divider{background-color:transparent;box-shadow:0 4px 8px rgba(0,0,0,0.2);margin:30px;padding:1%;border-radius:10px;}@media (min-width:475px){.container{max-width:475px;}}@media (min-width:640px){.container{max-width:640px;}}@media (min-width:768px){.container{max-width:768px;}}@media (min-width:1024px){.container{max-width:1024px;}}@media (min-width:1280px){.container{max-width:1280px;}}@media (min-width:1536px){.container{max-width:1536px;}}@media screen and (max-width:400px){.login-html{padding:50px 10px 30px 10px;}}
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans:wght@500&display=swap");
+.app-status{
+    color: #ffffff;
+    margin-top: 10px;
+    font-family:"Comfortaa",cursive;
+    font-size: 20px;
+   
+}
+.download-btn-app {
+    font-family: "Comfortaa", cursive;
+    color: black;
+    background-color: #fff;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #ddd;
+    }
+  }
+  

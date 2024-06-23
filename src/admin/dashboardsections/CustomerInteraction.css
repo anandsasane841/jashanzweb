@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&family=Ubuntu+Mono&display=swap");
+.chat-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+  align-items: center;
+}
+
+.chat-message {
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.booking-paper-content {
+    font-family: "Montserrat", sans-serif;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+
+.chat-message.accepted {
+  background-color: #d4edda;
+}
+.chat-message.rejected {
+  background-color: #f8d7da;
+}
+.chat-message.pending {
+  background-color: #ffffff;
+}
+.action-buttons {
+  text-align: center;
+  margin-left: 40px;
+}
+
+
+
+.booking-field {
+    margin-bottom: 10px;
+    margin-left: 40px;
+  }
+  
+  .booking-field-title {
+    font-weight: bold;
+  }
+  
+  .booking-field-value {
+    font-weight: lighter;
+  }

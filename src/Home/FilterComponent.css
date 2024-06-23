@@ -1,0 +1,36 @@
+.option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 0 10px; /* Adjust the margin to control spacing */
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.option.selected {
+  transform: scale(1.1); /* Adjust the scale for selected items */
+}
+
+.circle {
+  background-color: #ffffff;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 10px; /* Adjust the margin to control spacing between circle and text */
+}
+
+.text-dark {
+  text-align: center;
+}
+
+/* Additional styles for Slider */
+.slider {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}

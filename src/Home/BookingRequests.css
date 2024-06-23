@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&family=Ubuntu+Mono&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+.booking-requests-container {
+  margin-top: 5rem;
+  background-color: #f9f8f8;
+  padding: 2rem;
+}
+
+.booking-header {
+  text-align: center;
+}
+
+.booking-header-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.booking-header-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.booking-grid {
+  margin-top: 4rem;
+}
+
+.booking-paper {
+  padding: 1rem;
+}
+
+.booking-paper-content {
+  font-family: "Montserrat", sans-serif;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.booking-field {
+  margin-bottom: 10px;
+}
+
+.booking-field-title {
+  font-weight: bold;
+}
+
+.booking-field-value {
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  color:  #625858;
+}
+
+.booking-status {
+  font-weight: bold;
+}
+
+.accepted {
+  background-color: #d4edda;
+}
+
+.rejected {
+  background-color: #f8d7da;
+}
+
+.pending {
+  background-color: #ffffff;
+}
+
+.booking-action {
+  text-align: right;
+}
+
+.no-booking-message {
+  text-align: center;
+}
+
+.booking-footer {
+  margin-top: 5rem;
+}

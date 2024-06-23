@@ -1,0 +1,1 @@
+.flex-center {display: flex; justify-content: center; align-items: center; height: 100vh;} .text-center {text-align: center;} .custom-image {width: 100px; height: auto; animation: fadeInScale 1.5s ease-in-out infinite;} @keyframes fadeInScale {0%, 100% {opacity: 0.5; transform: scale(0.8);} 50% {opacity: 1; transform: scale(1.2);}}

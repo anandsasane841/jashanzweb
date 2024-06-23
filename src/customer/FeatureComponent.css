@@ -1,0 +1,116 @@
+/* FeatureComponent.css */
+
+/* General Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+  }
+  
+  p {
+    text-align: center;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    padding: 50px 0;
+    background-color: #f0f0f0;
+  }
+  
+  .hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .explore-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #FFFFFF;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .explore-btn:hover {
+    background-color: #758698;
+    color: #000000;
+    text-decoration: none;
+  }
+  
+  /* Features Section */
+  .features-section {
+    padding: 50px 0;
+  }
+  
+  .feature {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .dj {
+    background-image: url('https://jashanzprimaryfiles.s3.ap-south-1.amazonaws.com/Dj.png');
+  }
+  
+  .banquet {
+    background-image: url('https://jashanzprimaryfiles.s3.ap-south-1.amazonaws.com/Marriage.png');
+  }
+  
+  .birthday {
+    background-image: url('https://jashanzprimaryfiles.s3.ap-south-1.amazonaws.com/Birthday.png');
+  }
+  
+  .event {
+    background-image: url('https://jashanzprimaryfiles.s3.ap-south-1.amazonaws.com/event-management-team.png');
+  }
+
+  .performer{
+    background-image: url('https://jashanzprimaryfiles.s3.ap-south-1.amazonaws.com/dancers.png');
+
+  }
+
+  .decorator{
+    background-image: url('https://jashanzprimaryfiles.s3.ap-south-1.amazonaws.com/decorators.png');
+
+  }
+  
+  .host{
+    background-image: url('https://jashanzprimaryfiles.s3.ap-south-1.amazonaws.com/anchor.png');
+
+  }
+  /* Call to Action Section */
+  .call-to-action {
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .get-started-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .get-started-btn:hover {
+    background-color: #218838;
+    text-decoration: none;
+  }
+  
