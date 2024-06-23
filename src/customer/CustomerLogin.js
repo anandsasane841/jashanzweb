@@ -133,42 +133,6 @@ const CustomerLogin = ({ isAuthenticatedUser, setIsAuthenticatedUser }) => {
           <AppBar position="static" color="default">
             <Header />
           </AppBar>
-          <Container
-            sx={{
-              borderRadius: 2,
-              backgroundColor: "#3498db",
-              boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
-              padding: 3,
-              textAlign: "center",
-            }}
-          >
-            <Typography variant="h6" color="white" sx={{ my: 2 }}>
-              Download the Jashanz App now!
-            </Typography>
-            <a
-              href="https://jashanzprimaryfiles.s3.ap-south-1.amazonaws.com/Jashanz.apk"
-              download
-              style={{ textDecoration: "none" }}
-            >
-              <Button
-                variant="contained"
-                startIcon={<AndroidIcon />}
-                sx={{
-                  color: "#000",
-                  backgroundColor: "#fff",
-                  padding: "10px 20px",
-                  borderRadius: "20px",
-                  transition: "background-color 0.3s ease",
-                  "&:hover": {
-                    backgroundColor: "#ddd",
-                  },
-                }}
-              >
-                Download App
-              </Button>
-            </a>
-          </Container>
-
           <div
             style={{
               display: "flex",
