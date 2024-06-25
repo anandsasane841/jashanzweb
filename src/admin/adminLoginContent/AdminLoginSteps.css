@@ -1,0 +1,95 @@
+.admin-login-steps {
+  margin-top: 20px;
+}
+
+.step-box {
+  text-align: center;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  margin-bottom: 20px; /* Ensure spacing in desktop view */
+}
+
+.step-box-register {
+  background-color: #007bff; /* Blue */
+}
+
+.step-box-signin {
+  background-color: #28a745; /* Green */
+}
+
+.step-box-upload {
+  background-color: #ffc107; /* Yellow */
+}
+
+.step-box-customers {
+  background-color: #17a2b8; /* Teal */
+}
+
+.step-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 767px) {
+  .admin-login-steps {
+    padding: 10px 0;
+  }
+
+  .step-box {
+    width: 80%; /* Adjust width for better fit on mobile */
+    margin-right: 10px; /* Space between boxes */
+  }
+
+  .step-box:last-child {
+    margin-right: 0; /* Remove margin on the last box */
+  }
+
+  .step-icon {
+    font-size: 36px;
+  }
+
+  .admin-login-steps .card-title {
+    font-size: 18px;
+  }
+
+  .admin-login-steps .card-text {
+    font-size: 14px;
+  }
+}
+@media (max-width: 576px) {
+  .admin-login-steps {
+    padding: 10px;
+    overflow-x: auto; /* Enable horizontal scrolling */
+  }
+
+  .admin-login-steps .row {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping to keep items in a single line */
+  }
+
+  .step-box {
+    min-width: 250px; /* Set a minimum width for each box */
+    margin-right: 15px; /* Add spacing between boxes */
+    flex: 0 0 auto; /* Prevent flex item from shrinking */
+  }
+
+  .step-box:last-child {
+    margin-right: 0; /* Remove right margin for the last item */
+  }
+
+  .step-icon {
+    font-size: 36px; /* Reduce icon size */
+    margin-bottom: 10px;
+  }
+
+  .step-box .card-title {
+    font-size: 1.2em; /* Reduce title font size */
+  }
+
+  .step-box .card-text {
+    font-size: 0.9em; /* Reduce text font size */
+  }
+}

@@ -1,0 +1,65 @@
+/* AdminsContent.css */
+
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .icon {
+    font-size: 3rem;
+    margin-right: 12px;
+  }
+  
+  .title {
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+  
+  .subtitle {
+    color: #666;
+  }
+  .icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .dj {
+    background-image: url('https://jashanzprimaryfiles.s3.ap-south-1.amazonaws.com/Dj.png');
+  }
+  
+  .banquet {
+    background-image: url('https://jashanzprimaryfiles.s3.ap-south-1.amazonaws.com/Marriage.png');
+  }
+  
+  .birthday {
+    background-image: url('https://jashanzprimaryfiles.s3.ap-south-1.amazonaws.com/Birthday.png');
+  }
+  
+  .event {
+    background-image: url('https://jashanzprimaryfiles.s3.ap-south-1.amazonaws.com/event-management-team.png');
+  }
+
+  .performer{
+    background-image: url('https://jashanzprimaryfiles.s3.ap-south-1.amazonaws.com/dancers.png');
+
+  }
+
+  .decorator{
+    background-image: url('https://jashanzprimaryfiles.s3.ap-south-1.amazonaws.com/decorators.png');
+
+  }
+  
+  .host{
+    background-image: url('https://jashanzprimaryfiles.s3.ap-south-1.amazonaws.com/anchor.png');
+
+  }

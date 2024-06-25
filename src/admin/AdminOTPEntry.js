@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Typography, Paper, Container, Button } from "@mui/material";
-import { Send as SendIcon } from "@mui/icons-material";
+import { Button } from "react-bootstrap";
+import { Send } from "react-bootstrap-icons";
 
 const AdminOTPEntry = ({ onSubmitOTP }) => {
   const [otp, setOTP] = useState("");
@@ -11,51 +11,30 @@ const AdminOTPEntry = ({ onSubmitOTP }) => {
   };
 
   return (
-    <Container maxWidth="xs" className="mt-5">
-      <Paper
-        sx={{
-          backgroundColor: "#0088a9",
-          padding: 5,
-          boxShadow: "0 4px 8px rgba(4,19,125,0.4)",
-        }}
-      >
-        <Typography
-          align="center"
-          sx={{
-            color: "#333", // Adjust color to a professional tone, such as a dark gray
-            marginBottom: 3,
-            textAlign: "center",
-            fontFamily: "Arial, sans-serif", // Use a common professional font
-            fontWeight: "bold", // Emphasize the message
-          }}
-        >
-          An OTP has been sent to your mobile device.
-        </Typography>
-        <form onSubmit={handleSubmit}>
-          <div className="text-center">
-            <input
-              type="text"
-              placeholder="Enter OTP*"
-              value={otp}
-              onChange={(e) => setOTP(e.target.value)}
-              required
-              style={{ borderRadius: "20px", padding: "10px" }}
-            />
-            <div className="text-center mt-2">
-              <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                endIcon={<SendIcon />}
-                sx={{ borderRadius: 10 }}
-              >
-                Submit
+    <div className="container mt-5">
+        <div className="card-body">
+          <h5>
+            An OTP has been sent to your mobile device.
+          </h5>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group ">
+              <input
+                type="text"
+                className="form-control rounded-pill px-4"
+                placeholder="Enter OTP*"
+                value={otp}
+                onChange={(e) => setOTP(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <Button type="submit" variant="primary" className="btn-block" style={{ borderRadius: "20px" }}>
+                Submit <Send className="ml-2" />
               </Button>
             </div>
-          </div>
-        </form>
-      </Paper>
-    </Container>
+          </form>
+        </div>
+    </div>
   );
 };
 

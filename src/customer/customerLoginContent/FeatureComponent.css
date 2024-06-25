@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+.container {
+  font-family: "Roboto", sans-serif;
+  padding: 20px;
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.features-section {
+  margin: 40px 0;
+}
+
+.feature-item {
+  text-align: center;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.dj {
+  background-image: url("https://jashanzprimaryfiles.s3.ap-south-1.amazonaws.com/Dj.png");
+}
+
+.banquet {
+  background-image: url("https://jashanzprimaryfiles.s3.ap-south-1.amazonaws.com/Marriage.png");
+}
+
+.birthday {
+  background-image: url("https://jashanzprimaryfiles.s3.ap-south-1.amazonaws.com/Birthday.png");
+}
+
+.event {
+  background-image: url("https://jashanzprimaryfiles.s3.ap-south-1.amazonaws.com/event-management-team.png");
+}
+
+.performer {
+  background-image: url("https://jashanzprimaryfiles.s3.ap-south-1.amazonaws.com/dancers.png");
+}
+
+.decorator {
+  background-image: url("https://jashanzprimaryfiles.s3.ap-south-1.amazonaws.com/decorators.png");
+}
+
+.host {
+  background-image: url("https://jashanzprimaryfiles.s3.ap-south-1.amazonaws.com/anchor.png");
+}
+
+.feature-title {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.call-to-action {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.call-to-action h2 {
+  font-size: 2rem;
+  color: #333;
+}
+

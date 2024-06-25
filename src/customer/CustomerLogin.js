@@ -7,12 +7,9 @@ import "./CustomerLogin.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import CustomLoader from "../CustomLoader";
 import { Container, AppBar } from "@mui/material";
-import { Link as MaterialLink } from "@mui/material";
 import OTPEntry from "./OtpEntry";
-import FeatureComponent from "./FeatureComponent";
+import FeatureComponent from "./customerLoginContent/FeatureComponent";
 import { toast } from "react-toastify";
-import { Box, Typography, Button, IconButton, Paper } from "@mui/material";
-import AndroidIcon from "@mui/icons-material/Android";
 
 const CustomerLogin = ({ isAuthenticatedUser, setIsAuthenticatedUser }) => {
   const location = useLocation();
@@ -123,6 +120,10 @@ const CustomerLogin = ({ isAuthenticatedUser, setIsAuthenticatedUser }) => {
   const handleLinkForgotPassword = () => {
     navigate(`/forgotPassword`);
   };
+  const [showSignIn, setShowSignIn] = useState(true);
+  const toggleForms = () => {
+    setShowSignIn(!showSignIn);
+  };
 
   return (
     <div>
@@ -146,174 +147,160 @@ const CustomerLogin = ({ isAuthenticatedUser, setIsAuthenticatedUser }) => {
               <div>
                 {/* Your CustomerLogin component content */}
                 <FeatureComponent /> {/* Use the FeatureComponent here */}
-              </div>
-              <div>
-                {showOTPForm && <OTPEntry onSubmitOTP={handleOTPSubmit} />}
-                {!showOTPForm && (
-                  <Container>
-                    <div className="login-wrap mt-5">
-                      <div className="login-html">
-                        <input
-                          id="tab-1"
-                          type="radio"
-                          name="tab"
-                          className="sign-in"
-                          checked={selectedTab === "sign-in"}
-                          onChange={() => handleTabChange("sign-in")}
-                        />
-                        <label htmlFor="tab-1" className="tab">
-                          Sign In
-                        </label>
-                        <input
-                          id="tab-2"
-                          type="radio"
-                          name="tab"
-                          className="for-pwd"
-                          checked={selectedTab === "sign-up"}
-                          onChange={() => handleTabChange("sign-up")}
-                        />
-                        <label htmlFor="tab-2" className="tab">
-                          Sign Up
-                        </label>
-                        <div className="login-form">
-                          <div className="sign-in-htm">
-                            <form onSubmit={handleSignInSubmit}>
-                              <div className="group">
-                                <input
-                                  id="user"
-                                  type="text"
-                                  className="input"
-                                  required
-                                  placeholder="Enter  Email or Mobile Number"
-                                  name="emailormobile"
-                                  value={formData.emailormobile}
-                                  onChange={handleInputChange}
-                                />
-                              </div>
-                              <div className="group">
-                                <input
-                                  id="pass"
-                                  type="password"
-                                  className="input"
-                                  data-type="password"
-                                  required
-                                  placeholder="Enter Password"
-                                  name="password"
-                                  value={formData.password}
-                                  onChange={handleInputChange}
-                                />
-                              </div>
-                              <div className="group">
-                                <input
-                                  type="submit"
-                                  className="btn btn-primary"
-                                  style={{
-                                    display: "block",
-                                    width: "100%",
-                                    borderRadius: "20px",
-                                    padding: "10px",
-                                  }}
-                                  value="Sign In"
-                                />
-                              </div>
-                              <p className="text-right">
-                                <MaterialLink
-                                  component="button"
-                                  variant="body2"
-                                  style={{
-                                    color: "white",
-                                    textDecoration: "none",
-                                    fontWeight: "bold",
-                                    cursor: "pointer",
-                                  }}
+              </div>{" "}
+              <div className="row justify-content-center ">
+                <div className="col-lg-6 col-md-8 col-sm-10">
+                  <div className="card mt-5 bg-white" style={{ borderRadius: "15px" }}>
+                    <Container className="main-container">
+                      {showOTPForm && (
+                        <OTPEntry onSubmitOTP={handleOTPSubmit} />
+                      )}
+
+                      {!showOTPForm && (
+                        <div className="content">
+                          <div className="form-container">
+                            {showSignIn ? (
+                              <div id="signInForm">
+                                <h2 className="text-center">Sign In</h2>
+                                <form onSubmit={handleSignInSubmit} >
+                                  <div className="form-group">
+                                    <label htmlFor="signInEmail">
+                                      Username:
+                                    </label>
+                                    <input
+                                      type="text"
+                                      className="form-control rounded-pill px-4"
+                                      id="signInEmail"
+                                      required
+                                      placeholder="Enter Email or Mobile Number"
+                                      name="emailormobile"
+                                      value={formData.emailormobile}
+                                      onChange={handleInputChange}
+                                    />
+                                  </div>
+                                  <div className="form-group">
+                                    <label htmlFor="signInPassword">
+                                      Password:
+                                    </label>
+                                    <input
+                                      type="password"
+                                      className="form-control rounded-pill px-4"
+                                      id="signInPassword"
+                                      required
+                                      placeholder="Enter Password"
+                                      name="password"
+                                      value={formData.password}
+                                      onChange={handleInputChange}
+                                    />
+                                  </div>
+                                  <div className="form-group">
+                                    <button
+                                      type="submit"
+                                      className="btn btn-primary rounded-pill"
+                                    >
+                                      Sign In
+                                    </button>
+                                  </div>
+                                </form>
+                                <a
+                                  href="#"
+                                  className="toggle-link"
                                   onClick={handleLinkForgotPassword}
                                 >
                                   Forgot Password
-                                </MaterialLink>
-                              </p>
-                            </form>
-                            <div className="hr"></div>
-                          </div>
-                          <div className="for-pwd-htm">
-                            <form onSubmit={handleSignUpSubmit}>
-                              <div className="group">
-                                <input
-                                  id="name"
-                                  type="text"
-                                  className="input"
-                                  placeholder="Your Name"
-                                  name="name"
-                                  value={formData.name}
-                                  onChange={handleInputChange}
-                                  required
-                                />
+                                </a>
+                                <a
+                                  href="#"
+                                  className="toggle-link"
+                                  onClick={toggleForms}
+                                >
+                                  Don't have an account? Sign Up
+                                </a>
                               </div>
-                              <div className="group">
-                                <input
-                                  id="email"
-                                  type="email"
-                                  className="input"
-                                  placeholder="Your Email"
-                                  name="email"
-                                  value={formData.email}
-                                  onChange={handleInputChange}
-                                  required
-                                />
+                            ) : (
+                              <div id="signUpForm">
+                                <h2 className="text-center">Sign Up</h2>
+                                <form onSubmit={handleSignUpSubmit}>
+                                  <div className="form-group">
+                                    <input
+                                      id="name"
+                                      type="text"
+                                      className="form-control rounded-pill px-4"
+                                      placeholder="Your Name"
+                                      name="name"
+                                      value={formData.name}
+                                      onChange={handleInputChange}
+                                      required
+                                    />
+                                  </div>
+
+                                  <div className="form-group">
+                                    <input
+                                      id="mobileNumber"
+                                      type="text"
+                                      className="form-control rounded-pill px-4"
+                                      placeholder="Enter Mobile Number"
+                                      name="mobileNumber"
+                                      value={formData.mobileNumber}
+                                      onChange={handleInputChange}
+                                      pattern="[0-9]{10}"
+                                      title="Mobile number should be 10 digits"
+                                      required
+                                    />
+                                  </div>
+
+                                  <div className="form-group">
+                                    <input
+                                      id="email"
+                                      type="email"
+                                      className="form-control rounded-pill px-4"
+                                      placeholder="Enter Email"
+                                      name="email"
+                                      value={formData.email}
+                                      onChange={handleInputChange}
+                                      required
+                                    />
+                                  </div>
+                                  <div className="form-group">
+                                    <input
+                                      id="signUpPassword"
+                                      type="password"
+                                      className="form-control rounded-pill px-4"
+                                      placeholder="Enter Password"
+                                      name="password"
+                                      value={formData.password}
+                                      onChange={handleInputChange}
+                                      required
+                                    />
+                                  </div>
+                                  <div className="form-group">
+                                    <button
+                                      type="submit"
+                                      className="btn btn-primary rounded-pill"
+                                 >
+                                    Submit
+                                  </button>
+                                  </div>
+                                </form>
+                                <a
+                                  href="#"
+                                  className="toggle-link"
+                                  onClick={toggleForms}
+                                >
+                                  Already have an account? Sign In
+                                </a>
                               </div>
-                              <div className="group">
-                                <input
-                                  id="contact_number"
-                                  type="tel"
-                                  className="input"
-                                  placeholder="Your Contact Number"
-                                  name="mobileNumber"
-                                  value={formData.mobileNumber}
-                                  onChange={handleInputChange}
-                                  required
-                                />
-                              </div>
-                              <div className="group">
-                                <input
-                                  id="password"
-                                  type="password"
-                                  className="input"
-                                  placeholder="Your Password"
-                                  name="password"
-                                  value={formData.password}
-                                  onChange={handleInputChange}
-                                  minLength={6}
-                                  required
-                                />
-                              </div>
-                              <input
-                                type="hidden"
-                                name="role"
-                                value={formData.role}
-                              />
-                              <div className="group">
-                                <input
-                                  type="submit"
-                                  className="btn btn-primary"
-                                  style={{
-                                    display: "block",
-                                    width: "100%",
-                                    borderRadius: "20px",
-                                    padding: "10px",
-                                  }}
-                                  value="Register"
-                                />
-                              </div>
-                            </form>
-                            <div className="hr"></div>
+                            )}
                           </div>
                         </div>
-                      </div>
-                    </div>
-                  </Container>
-                )}
+                      )}
+                    </Container>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
           <div>
             <Footer />
           </div>

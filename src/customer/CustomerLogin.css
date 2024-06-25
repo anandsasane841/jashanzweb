@@ -1,23 +1,62 @@
-.class-divider{background-color:transparent;box-shadow:0 4px 8px rgba(0,0,0,0.2);margin:30px;padding:1%;border-radius:10px;}@media (min-width:475px){.container{max-width:475px;}}@media (min-width:640px){.container{max-width:640px;}}@media (min-width:768px){.container{max-width:768px;}}@media (min-width:1024px){.container{max-width:1024px;}}@media (min-width:1280px){.container{max-width:1280px;}}@media (min-width:1536px){.container{max-width:1536px;}}@media screen and (max-width:400px){.login-html{padding:50px 10px 30px 10px;}}
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans:wght@500&display=swap");
-.app-status{
-    color: #ffffff;
-    margin-top: 10px;
-    font-family:"Comfortaa",cursive;
-    font-size: 20px;
-   
+
+
+.main-container h2 {
+  margin: 0 0 20px;
+  color: #333;
 }
-.download-btn-app {
-    font-family: "Comfortaa", cursive;
-    color: black;
-    background-color: #fff;
-    color: #000;
-    padding: 10px 20px;
-    border-radius: 20px;
-    transition: background-color 0.3s ease;
-  
-    &:hover {
-      background-color: #ddd;
-    }
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.form-group input,
+.form-group select,
+.form-group button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-group button {
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.form-group button:hover {
+  background-color: #555;
+}
+
+.toggle-link {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  color: #333;
+  text-decoration: none;
+}
+
+.toggle-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .main-container {
+    padding: 15px;
   }
-  
+
+  .form-group input,
+  .form-group select,
+  .form-group button {
+    padding: 8px;
+  }
+}

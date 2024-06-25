@@ -70,140 +70,87 @@ const ForgotPassword = () => {
      <AppBar position="static" color="default">
         <Header />
       </AppBar>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          minHeight: "100vh",
-          width: "100%", // Set width to 100% to cover the entire viewport width
-          textAlign: "center",
-        }}
-      >
-
-      <Container>
-      <h1>
-            Forgot Password
-          </h1>
-
-        <Paper
-          sx={{
-            backgroundColor: "#0088a9",
-            padding: 3,
-            boxShadow: "0 4px 8px rgba(4,19,125,0.4)",
-          }}
-        >
-          
-          {!showOtpInput ? (
-            <form onSubmit={handleMobileSubmit}>
-              <div className="text-center">
-                <input
-                  type="text"
-                  value={mobileNumber}
-                  onChange={(e) =>
-                    setMobileNumber(
-                      e.target.value.replace(/[^0-9]/g, "").slice(0, 10)
-                    )
-                  }
-                  placeholder="Enter Mobile Number"
-                  required
-                  style={{ borderRadius: "20px", padding: "10px" }}
-                />
-
-                <div className="text-center mt-2">
-                  <button
-                    type="submit"
-                    className="btn btn-primary"
-                    style={{
-                      borderRadius: "20px",
-                      padding: "10px",
-                      width: "30%",
-                    }}
-                  >
-                    Get OTP
-                  </button>
-                </div>
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-lg-6 col-md-8 col-sm-10">
+            <div className="card mt-5">
+              <div className="card-body">
+                <h1 className="card-title mb-4 text-center">Forgot Password</h1>
+                {!showOtpInput ? (
+                  <form onSubmit={handleMobileSubmit}>
+                    <div className="form-group">
+                      <input
+                        type="text"
+                        className="form-control rounded-pill"
+                        value={mobileNumber}
+                        onChange={(e) =>
+                          setMobileNumber(
+                            e.target.value.replace(/[^0-9]/g, "").slice(0, 10)
+                          )
+                        }
+                        placeholder="Enter Mobile Number"
+                        required
+                      />
+                    </div>
+                    <div className="text-center mt-3">
+                      <button
+                        type="submit"
+                        className="btn btn-primary rounded-pill px-4"
+                      >
+                        Get OTP
+                      </button>
+                    </div>
+                    {otpError && (
+                      <p className="text-danger mt-2 text-center">
+                        Error sending OTP. Please try again.
+                      </p>
+                    )}
+                  </form>
+                ) : (
+                  <form onSubmit={handleOtpSubmit}>
+                    <p className="text-success mb-3 text-center">
+                      {successMessage || "OTP sent successfully!"}
+                    </p>
+                    <div className="form-group">
+                      <input
+                        type="text"
+                        className="form-control rounded-pill"
+                        placeholder="Enter OTP"
+                        value={otp}
+                        onChange={(e) => setOtp(e.target.value)}
+                        required
+                      />
+                    </div>
+                    <div className="form-group">
+                      <input
+                        type="password"
+                        className="form-control rounded-pill"
+                        placeholder="New Password"
+                        value={newPassword}
+                        onChange={(e) => setNewPassword(e.target.value)}
+                        minLength={6}
+                        required
+                      />
+                    </div>
+                    <div className="text-center mt-3">
+                      <button
+                        type="submit"
+                        className="btn btn-primary rounded-pill px-4"
+                      >
+                        Submit OTP
+                      </button>
+                    </div>
+                    {otpError && (
+                      <p className="text-danger text-center">
+                        Incorrect OTP. Please try again.
+                      </p>
+                    )}
+                  </form>
+                )}
               </div>
-              {otpError && (
-                <Typography
-                  variant="body1"
-                  sx={{ color: "white", marginTop: 2, textAlign: "center" }}
-                >
-                  Error sending OTP. Please try again.
-                </Typography>
-              )}
-              {successMessage && (
-                <Typography
-                  variant="body1"
-                  sx={{ color: "white", marginTop: 2 }}
-                ></Typography>
-              )}
-            </form>
-          ) : (
-            <div>
-              <Typography
-                variant="body1"
-                sx={{ color: "white", marginBottom: 2, textAlign: "center" }}
-              >
-                {successMessage || "OTP sent successfully!"}
-              </Typography>
-
-              <form onSubmit={handleOtpSubmit}>
-                <div className="text-center">
-                  <input
-                    placeholder="Enter OTP"
-                    type="text"
-                    value={otp}
-                    onChange={(e) => setOtp(e.target.value)}
-                    style={{ borderRadius: "20px", padding: "10px" }}
-                    required
-                  />
-                </div>
-
-                <div className="text-center  mt-2">
-                  <input
-                    placeholder="New Password"
-                    value={newPassword}
-                    onChange={(e) => setNewPassword(e.target.value)}
-                    type="password"
-                    style={{ borderRadius: "20px", padding: "10px" }}
-                    minLength={6}
-                    required
-                  />
-                </div>
-
-                <div className="text-center mt-2">
-                  <button
-                    type="submit"
-                    className="btn btn-primary"
-                    style={{
-                      borderRadius: "20px",
-                      padding: "10px",
-                      width: "30%",
-                    }}
-                  >
-                    Submit OTP
-                  </button>
-                </div>
-              </form>
-              {otpError && (
-                <Typography
-                  variant="body1"
-                  sx={{ color: "white", marginTop: 2, textAlign: "center" }}
-                >
-                  Incorrect OTP. Please try again.
-                </Typography>
-              )}
-              {successMessage && (
-                <Typography
-                  variant="body1"
-                  sx={{ color: "white", marginTop: 2 }}
-                ></Typography>
-              )}
             </div>
-          )}
-        </Paper>
-      </Container>
+          </div>
+        </div>
       </div>
       <div>
         <Footer />

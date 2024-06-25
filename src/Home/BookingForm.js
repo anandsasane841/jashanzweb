@@ -51,6 +51,7 @@ const BookingForm = ({
     paymentId: "",
   });
   const [selectedServicesState, setSelectedServices] = useState([]);
+  
   useEffect(() => {
     const token = localStorage.getItem("token");
 
@@ -163,13 +164,10 @@ const BookingForm = ({
   };
 
   const timeSlots = generateTimeSlots();
+  
   return (
     <form onSubmit={handleConfirmBooking}>
-      <Paper
-        elevation={3}
-        style={{ padding: 20, marginTop: 20 }}
-        className="bg-light"
-      >
+      <Paper elevation={3} style={{ padding: 20, marginTop: 20 }}>
         {bookingConfirmed ? (
           <>
             <Typography variant="h4">Booking Confirmed!</Typography>
@@ -184,13 +182,7 @@ const BookingForm = ({
           </>
         ) : (
           <>
-            <div style={{ color: "#ADD8E6" }}>
-              <Typography variant="h6" gutterBottom>
-                You are currently benefiting from complimentary service usage,
-                with no deductions from your balance for payments.
-              </Typography>
-            </div>
-            <div>
+            <div style={{ backgroundColor: "#f0f0f0", padding: 20, borderRadius: 10 }}>
               <Typography variant="h4" gutterBottom>
                 <EventIcon sx={{ fontSize: 40, marginRight: 1 }} />
                 {event.eventType}
@@ -205,7 +197,7 @@ const BookingForm = ({
               </Typography>
             </div>
 
-            <Grid container spacing={2}>
+            <Grid container spacing={2} style={{ marginTop: 20 }}>
               <Grid item xs={12} md={6}>
                 <>
                   <Alert severity="info" style={{ marginTop: "16px" }}>
@@ -237,6 +229,7 @@ const BookingForm = ({
                       backgroundColor: "#FFFFF0",
                       padding: 10,
                       borderRadius: 5,
+                      marginTop: 10,
                     }}
                   >
                     <Typography
@@ -267,7 +260,7 @@ const BookingForm = ({
                         fontSize: 16,
                       }}
                     >
-                      ₹ Grand Total Price: ₹{totalPrice + gst}
+                      Grand Total Price: ₹{totalPrice + gst}
                     </Typography>
                   </div>
                 </>
@@ -289,7 +282,7 @@ const BookingForm = ({
                     }
                     required
                     fullWidth
-                    style={{ marginBottom: 10 }}
+                    style={{ marginBottom: 10, marginTop: 10 }}
                   />
                   <Select
                     id="bookingTime"
@@ -311,6 +304,7 @@ const BookingForm = ({
                         {timeSlot}
                       </MenuItem>
                     ))}
+                  
                   </Select>
                   {paymentStatus !== "Pending" && (
                     <Typography
@@ -348,22 +342,16 @@ const BookingForm = ({
                   variant="contained"
                   color="primary"
                   startIcon={<CheckCircle />}
-                  style={{ backgroundColor: "#28a745", fontSize: 16 }}
+                  style={{ backgroundColor: "#28a745", fontSize: 16, marginRight: 10 }}
                 >
                   Confirm Booking
                 </Button>
-              </div>
-              <div>
                 <Button
                   variant="contained"
                   color="secondary"
                   onClick={onModalClose}
                   startIcon={<Cancel />}
-                  style={{
-                    backgroundColor: "#6c757d",
-                    marginTop: "10px",
-                    fontSize: 16,
-                  }}
+                  style={{ backgroundColor: "#6c757d", fontSize: 16 }}
                 >
                   Close
                 </Button>
